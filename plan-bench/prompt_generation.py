@@ -117,6 +117,8 @@ class PromptGenerator:
             range_list = range(self.i_start, self.i_end + 2 - self.n_examples)
         
         for start in tqdm(range_list):
+            if start + self.n_examples in completed_instances: 
+                continue
             query = self.data["domain_intro"]
             instance_structured_output = {}
             examples = []
@@ -125,10 +127,7 @@ class PromptGenerator:
                 get_plan = not last_plan                
                 if last_plan:
                     cur_instance = self.instance.format(i)
-                    if i in completed_instances:
-                        continue
                     instance_structured_output["instance_id"] = i
-
                 else:
                     if random_example:
                         new_i = random.choice([ln for ln in range(1,self.n_files) if ln != i])
@@ -137,7 +136,6 @@ class PromptGenerator:
                     else:
                         cur_instance = self.instance.format(i)
                         examples.append(i)
-                
                 if self.verbose:
                     print(f"Instance {cur_instance}")
                 # --------------- Read Instance --------------- #
