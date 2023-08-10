@@ -23,7 +23,15 @@ class Executor:
         else:
             self.pr_domain, self.pr_problem = domain, problem
         self.model = parse_model(self.pr_domain, self.pr_problem)
-        self.is_upper = False if any([i.islower() for i in self.model[DOMAIN]]) else True
+        # why do they all have different capitalizations?
+        self.is_capitalized = False
+        if any([i.islower() for i in self.model[DOMAIN]]):
+            self.is_upper = False
+        elif any([i.isupper() for i in self.model[DOMAIN]]):
+            self.is_upper = True
+        else:
+            self.is_upper = False
+            self.is_capitalized = True
         self.plan, self.cost = self.get_plan(self.pr_domain, self.pr_problem)
         if not self.is_pr_grounded:
             self.plan = [i.replace(" ", "_") for i in self.plan]
@@ -211,7 +219,10 @@ class Executor:
 
     def random_prefix_execution(self, replan=False):
         # print("PLAN", self.plan)
-        self.prefix = random.choice(range(1, len(self.plan)))
+        if len(self.plan)<2:
+            self.prefix = 1
+        else:
+            self.prefix = random.choice(range(1, len(self.plan)))
         self.final_state = self.get_final_state(self.init_state, self.plan[0:self.prefix])
         self.new_goal_state = self.final_state.difference(self.init_state)
         # self.all_preds = self.get_sets(self.model[PREDICATES])
@@ -244,6 +255,7 @@ class Executor:
         else:
             for act in plan:
                 act = act.upper() if self.is_upper else act
+                act = act.capitalize() if self.is_capitalized else act
                 try:
                     preconds, act_adds, act_dels = self.ground_strips_action(act)
                 except Exception as e:
