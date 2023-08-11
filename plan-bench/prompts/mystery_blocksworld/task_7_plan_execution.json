@@ -7981,6 +7981,486 @@
                 "craves_c_a",
                 "planet_a"
             ]
+        },
+        {
+            "example_instance_ids": [
+                1
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object b craves object c, harmony, planet object a, planet object c, planet object d, province object a, province object b and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object b from object c\nsuccumb object b\nattack object c\n[ACTION SEQUENCE END]\n[RESULTING STATE]\npain object c, planet object a, planet object b, planet object d, province object a, province object b and province object d\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "pain_c",
+                "province_d",
+                "planet_d",
+                "planet_a",
+                "province_a",
+                "province_b"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                2
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object b, object d craves object c, harmony, planet object b, planet object c, province object a and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object d from object c\nsuccumb object d\nattack object c\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object b, pain object c, planet object b, planet object d, province object a and province object d\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "pain_c",
+                "province_d",
+                "province_a",
+                "planet_d",
+                "craves_a_b"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                3
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object b craves object c, object c craves object d, object d craves object a, harmony, planet object a and province object b.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object b from object c\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject c craves object d, object d craves object a, pain object b, planet object a and province object c\n",
+            "ground_truth_plan": [
+                "planet_a",
+                "pain_b",
+                "province_c",
+                "craves_c_d",
+                "craves_d_a"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                4
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object c, object c craves object b, object d craves object a, harmony, planet object b and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object d from object a\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object c, object c craves object b, pain object d, planet object b and province object a\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "craves_a_c",
+                "province_a",
+                "craves_c_b",
+                "pain_d"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                5
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object b craves object a, object c craves object b, harmony, planet object a, planet object d, province object c and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nattack object d\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject b craves object a, object c craves object b, pain object d, planet object a and province object c\n",
+            "ground_truth_plan": [
+                "craves_b_a",
+                "planet_a",
+                "province_c",
+                "craves_c_b",
+                "pain_d"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                6
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object c, object c craves object b, object d craves object a, harmony, planet object b and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object d from object a\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object c, object c craves object b, pain object d, planet object b and province object a\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "craves_a_c",
+                "province_a",
+                "craves_c_b",
+                "pain_d"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                7
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object d, object b craves object c, object d craves object b, harmony, planet object c and province object a.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object a from object d\nsuccumb object a\nfeast object d from object b\nsuccumb object d\nfeast object b from object c\n[ACTION SEQUENCE END]\n[RESULTING STATE]\npain object b, planet object a, planet object c, planet object d, province object a, province object c and province object d\n",
+            "ground_truth_plan": [
+                "province_d",
+                "province_a",
+                "planet_a",
+                "planet_d",
+                "pain_b",
+                "province_c",
+                "planet_c"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                8
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object b craves object c, harmony, planet object a, planet object c, planet object d, province object a, province object b and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object b from object c\novercome object b from object a\nattack object d\novercome object d from object c\nfeast object b from object a\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject d craves object c, pain object b, planet object a, planet object c, province object a and province object d\n",
+            "ground_truth_plan": [
+                "craves_d_c",
+                "province_d",
+                "province_a",
+                "planet_a",
+                "pain_b",
+                "planet_c"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                9
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object c craves object d, object d craves object a, harmony, planet object a, planet object b, province object b and province object c.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object c from object d\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject d craves object a, pain object c, planet object a, planet object b, province object b and province object d\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "pain_c",
+                "province_d",
+                "planet_a",
+                "province_b",
+                "craves_d_a"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                10
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object c craves object b, object d craves object a, harmony, planet object a, planet object b, province object c and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object c from object b\nsuccumb object c\nattack object b\novercome object b from object c\nfeast object d from object a\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject b craves object c, pain object d, planet object a, planet object c, province object a and province object b\n",
+            "ground_truth_plan": [
+                "province_a",
+                "planet_a",
+                "craves_b_c",
+                "province_b",
+                "planet_c",
+                "pain_d"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                11
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object d, object b craves object c, harmony, planet object c, planet object d, province object a and province object b.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object a from object d\nsuccumb object a\nattack object d\novercome object d from object a\nfeast object b from object c\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject d craves object a, pain object b, planet object a, planet object c, province object c and province object d\n",
+            "ground_truth_plan": [
+                "province_d",
+                "planet_a",
+                "pain_b",
+                "province_c",
+                "planet_c",
+                "craves_d_a"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                12
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object b craves object d, harmony, planet object a, planet object c, planet object d, province object a, province object b and province object c.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object b from object d\novercome object b from object c\nattack object d\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject b craves object c, pain object d, planet object a, planet object c, province object a and province object b\n",
+            "ground_truth_plan": [
+                "planet_a",
+                "province_a",
+                "craves_b_c",
+                "province_b",
+                "planet_c",
+                "pain_d"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                13
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object c craves object b, object d craves object a, harmony, planet object a, planet object b, province object c and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object c from object b\nsuccumb object c\nfeast object d from object a\nsuccumb object d\nattack object a\n[ACTION SEQUENCE END]\n[RESULTING STATE]\npain object a, planet object b, planet object c, planet object d, province object b, province object c and province object d\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "province_d",
+                "planet_d",
+                "province_c",
+                "pain_a",
+                "province_b",
+                "planet_c"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                14
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object b, object b craves object c, object c craves object d, harmony, planet object d and province object a.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object a from object b\nsuccumb object a\nfeast object b from object c\nsuccumb object b\nfeast object c from object d\novercome object c from object b\nattack object d\novercome object d from object a\nfeast object c from object b\novercome object c from object d\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject c craves object d, object d craves object a, harmony, planet object a, planet object b, province object b and province object c\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "planet_a",
+                "craves_c_d",
+                "province_c",
+                "province_b",
+                "harmony",
+                "craves_d_a"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                15
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object b craves object d, object c craves object b, harmony, planet object a, planet object d, province object a and province object c.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object c from object b\nsuccumb object c\nattack object a\novercome object a from object c\nfeast object b from object d\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object c, pain object b, planet object c, planet object d, province object a and province object d\n",
+            "ground_truth_plan": [
+                "craves_a_c",
+                "province_d",
+                "planet_d",
+                "province_a",
+                "pain_b",
+                "planet_c"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                16
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object d craves object c, harmony, planet object a, planet object b, planet object c, province object a, province object b and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object c from object b\nsuccumb object c\nattack object a\novercome object a from object c\nfeast object b from object d\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object c, object d craves object c, pain object b, planet object b, planet object c, province object a and province object d\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "craves_d_c",
+                "craves_a_c",
+                "province_d",
+                "province_a",
+                "pain_b",
+                "planet_c"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                17
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object d, object d craves object c, harmony, planet object b, planet object c, province object a and province object b.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object a from object d\nsuccumb object a\nfeast object d from object c\nsuccumb object d\nattack object c\n[ACTION SEQUENCE END]\n[RESULTING STATE]\npain object c, planet object a, planet object b, planet object d, province object a, province object b and province object d\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "pain_c",
+                "province_d",
+                "province_a",
+                "planet_a",
+                "planet_d",
+                "province_b"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                18
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object c, object b craves object a, object d craves object b, harmony, planet object c and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object d from object b\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object c, object b craves object a, pain object d, planet object c and province object b\n",
+            "ground_truth_plan": [
+                "craves_b_a",
+                "craves_a_c",
+                "province_b",
+                "planet_c",
+                "pain_d"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                19
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object d, object c craves object a, harmony, planet object b, planet object d, province object b and province object c.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object c from object a\nsuccumb object c\nfeast object a from object d\novercome object a from object b\nattack object c\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object b, pain object c, planet object b, planet object d, province object a and province object d\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "pain_c",
+                "province_d",
+                "planet_d",
+                "province_a",
+                "craves_a_b"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                20
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object b craves object d, object c craves object a, harmony, planet object a, planet object d, province object b and province object c.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object c from object a\nsuccumb object c\nfeast object b from object d\novercome object b from object a\nattack object d\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject b craves object a, pain object d, planet object a, planet object c, province object b and province object c\n",
+            "ground_truth_plan": [
+                "craves_b_a",
+                "planet_a",
+                "province_c",
+                "province_b",
+                "planet_c",
+                "pain_d"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                21
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object c, object d craves object a, harmony, planet object b, planet object c, province object b and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nattack object b\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object c, object d craves object a, pain object b, planet object c and province object d\n",
+            "ground_truth_plan": [
+                "craves_a_c",
+                "province_d",
+                "pain_b",
+                "planet_c",
+                "craves_d_a"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                22
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object c craves object a, object d craves object c, harmony, planet object a, planet object b, province object b and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object d from object c\novercome object d from object b\nfeast object c from object a\nsuccumb object c\nfeast object d from object b\n[ACTION SEQUENCE END]\n[RESULTING STATE]\npain object d, planet object a, planet object b, planet object c, province object a, province object b and province object c\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "province_a",
+                "planet_a",
+                "province_c",
+                "province_b",
+                "planet_c",
+                "pain_d"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                23
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object d, object d craves object c, harmony, planet object b, planet object c, province object a and province object b.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object a from object d\nsuccumb object a\nfeast object d from object c\novercome object d from object a\nattack object b\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject d craves object a, pain object b, planet object a, planet object c, province object c and province object d\n",
+            "ground_truth_plan": [
+                "province_d",
+                "planet_a",
+                "pain_b",
+                "province_c",
+                "planet_c",
+                "craves_d_a"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                24
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object b, object b craves object d, object d craves object c, harmony, planet object c and province object a.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object a from object b\nsuccumb object a\nfeast object b from object d\nsuccumb object b\nfeast object d from object c\n[ACTION SEQUENCE END]\n[RESULTING STATE]\npain object d, planet object a, planet object b, planet object c, province object a, province object b and province object c\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "province_a",
+                "planet_a",
+                "province_c",
+                "province_b",
+                "planet_c",
+                "pain_d"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                25
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object b craves object a, object d craves object b, harmony, planet object a, planet object c, province object c and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object d from object b\nsuccumb object d\nfeast object b from object a\n[ACTION SEQUENCE END]\n[RESULTING STATE]\npain object b, planet object a, planet object c, planet object d, province object a, province object c and province object d\n",
+            "ground_truth_plan": [
+                "province_d",
+                "planet_d",
+                "planet_a",
+                "province_a",
+                "pain_b",
+                "province_c",
+                "planet_c"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                26
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object c craves object d, harmony, planet object a, planet object b, planet object d, province object a, province object b and province object c.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nattack object a\novercome object a from object b\nfeast object c from object d\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object b, pain object c, planet object b, planet object d, province object a and province object d\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "pain_c",
+                "province_d",
+                "planet_d",
+                "province_a",
+                "craves_a_b"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                27
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object b craves object d, object c craves object a, harmony, planet object a, planet object d, province object b and province object c.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object c from object a\nsuccumb object c\nattack object a\novercome object a from object c\nfeast object b from object d\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object c, pain object b, planet object c, planet object d, province object a and province object d\n",
+            "ground_truth_plan": [
+                "craves_a_c",
+                "province_d",
+                "planet_d",
+                "province_a",
+                "pain_b",
+                "planet_c"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                28
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object b, object b craves object d, harmony, planet object c, planet object d, province object a and province object c.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object c from object a\nsuccumb object c\nattack object a\novercome object a from object c\nfeast object b from object d\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object b, object a craves object c, pain object b, planet object c, planet object d, province object a and province object d\n",
+            "ground_truth_plan": [
+                "craves_a_c",
+                "province_d",
+                "planet_d",
+                "province_a",
+                "pain_b",
+                "craves_a_b",
+                "planet_c"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                29
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object d, object c craves object b, harmony, planet object b, planet object d, province object a and province object c.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object a from object d\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject c craves object b, pain object a, planet object b, planet object d, province object c and province object d\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "province_d",
+                "planet_d",
+                "province_c",
+                "pain_a",
+                "craves_c_b"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                30
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object b craves object a, object d craves object b, harmony, planet object a, planet object c, province object c and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object d from object b\novercome object d from object c\nfeast object b from object a\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject d craves object c, pain object b, planet object a, planet object c, province object a and province object d\n",
+            "ground_truth_plan": [
+                "craves_d_c",
+                "province_d",
+                "province_a",
+                "planet_a",
+                "pain_b",
+                "planet_c"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                31
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object c, object b craves object d, harmony, planet object c, planet object d, province object a and province object b.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object d from object b\novercome object d from object c\nfeast object b from object a\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object c, object b craves object d, object d craves object c, pain object b, planet object c, planet object d, province object a and province object d\n",
+            "ground_truth_plan": [
+                "craves_d_c",
+                "craves_a_c",
+                "province_d",
+                "planet_d",
+                "province_a",
+                "pain_b",
+                "planet_c",
+                "craves_b_d"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                32
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object d, object c craves object b, harmony, planet object b, planet object d, province object a and province object c.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object a from object d\nsuccumb object a\nattack object d\novercome object d from object c\nattack object a\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject c craves object b, object d craves object c, pain object a, planet object b and province object d\n",
+            "ground_truth_plan": [
+                "planet_b",
+                "craves_d_c",
+                "province_d",
+                "pain_a",
+                "craves_c_b"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                33
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object c, object b craves object a, harmony, planet object c, planet object d, province object b and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nfeast object b from object a\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object c, pain object b, planet object c, planet object d, province object a and province object d\n",
+            "ground_truth_plan": [
+                "craves_a_c",
+                "province_d",
+                "planet_d",
+                "province_a",
+                "pain_b",
+                "planet_c"
+            ]
+        },
+        {
+            "example_instance_ids": [
+                34
+            ],
+            "query": "I am playing with a set of objects. Here are the actions I can do\n\n   Attack object\n   Feast object from another object\n   Succumb object\n   Overcome object from another object\n\nI have the following restrictions on my actions:\n    To perform Attack action, the following facts need to be true: Province object, Planet object, Harmony.\n    Once Attack action is performed the following facts will be true: Pain object.\n    Once Attack action is performed the following facts will be false: Province object, Planet object, Harmony.\n    To perform Succumb action, the following facts need to be true: Pain object.\n    Once Succumb action is performed the following facts will be true: Province object, Planet object, Harmony.    \n    Once Succumb action is performed the following facts will be false: Pain object.\n    To perform Overcome action, the following needs to be true: Province other object, Pain object.\n    Once Overcome action is performed the following will be true: Harmony, Pain object, Object Craves other object.\n    Once Overcome action is performed the following will be false: Province other object, Pain object.\n    To perform Feast action, the following needs to be true: Object Craves other object, Province object, Harmony.\n    Once Feast action is performed the following will be true: Pain object, Province other object.\n    Once Feast action is performed the following will be false:, Object Craves other object, Province object, Harmony.\n\n[STATEMENT]\nAs initial conditions I have that, object a craves object c, object b craves object a, harmony, planet object c, planet object d, province object b and province object d.\n I have executed the following action sequence:\n\n[ACTION SEQUENCE]\nattack object d\n[ACTION SEQUENCE END]\n[RESULTING STATE]\nobject a craves object c, object b craves object a, pain object d, planet object c and province object b\n",
+            "ground_truth_plan": [
+                "craves_b_a",
+                "craves_a_c",
+                "province_b",
+                "planet_c",
+                "pain_d"
+            ]
         }
     ]
 }
