@@ -578,7 +578,10 @@ class PromptGenerator:
                         examples.append(i)
                 plan_executor = self.get_executor(cur_instance, self.domain_pddl)
                 if self.verbose:
-                    print(f"Instance {cur_instance}")                
+                    print(f"Instance {cur_instance}")
+                if(len(plan_executor.plan) < 1):
+                     print("Skipping instance "+str(i)+" becauce it requires an empty plan.")
+                     continue
                 instance_query, answer = plan_execution(plan_executor, self.data, get_plan)
                 query += instance_query
                 # --------------------------------------------------------- #
