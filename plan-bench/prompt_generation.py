@@ -555,6 +555,8 @@ class PromptGenerator:
             range_list = range(self.i_start, self.i_end + 2 - self.n_examples)
         
         for start in tqdm(range_list):
+            if start + self.n_examples in completed_instances:
+                continue
             query = self.data["domain_intro"]
             instance_structured_output = {}
             examples = []
@@ -564,8 +566,6 @@ class PromptGenerator:
                 
                 if last_plan:
                     cur_instance = self.instance.format(i)
-                    if i in completed_instances:
-                        continue
                     instance_structured_output["instance_id"] = i
                 else:
                     
