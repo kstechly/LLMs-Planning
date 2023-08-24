@@ -100,14 +100,13 @@ def text_to_plan_depots(text, action_set, plan_file, data, ground_flag=False):
     readable_plan = ""
     lines = [line.strip().lower() for line in text.split("\n")]
     for line in lines:
-        if not line:
+        if not line or line =="[plan end]":
             continue
         if '[COST]' in line:
             break
         
         line = line.lstrip("0123456789").replace(".","")
         #line = re.sub("^[0-9]+.","",line)
-        #KAYQ must the stripping of periods only happen when it's part of a list?
 
         objs = [i for i in line.split() if has_digit(i)]
         
